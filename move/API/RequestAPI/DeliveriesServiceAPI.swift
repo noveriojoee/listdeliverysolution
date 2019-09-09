@@ -17,9 +17,7 @@ public class DeliveriesServiceAPI: BaseAPIRequest {
         
         networkObject.performRequestGet(withAction: actionMethod, requestData: "") { (result) in
             if (result is [Any]){
-                for item in (result as! [Any]){
-                    deliveryItems.listOfDelivery?.append(DeliveryItemModel(JSON: (item as! [String : Any]))!)
-                }
+                deliveryItems.setListOfDelivery(arrayJson: result as! [Any])
                 responseObject.setResultObject(responseCode: "OK", responseMessage: "OK", data: deliveryItems)
             }else{
                 responseObject.setResultObject(responseCode: "ERROR", responseMessage: "UNKNOWN ERROR", data: deliveryItems)

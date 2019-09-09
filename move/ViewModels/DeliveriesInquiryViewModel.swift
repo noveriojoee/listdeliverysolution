@@ -11,17 +11,21 @@ import UIKit
 public class DeliveriesInquiryViewModel: NSObject {
     private var deliveryServices : DeliveriesServiceAPI!
     private var networkObj : NetworkingObject!
-    private var deliveryItemModels : DeliveryItemsModel?
+    
+    var deliveryItemModels : Array<DeliveryItemModel>?
+    var count : Int
     
     public override init() {
         self.deliveryServices = DeliveriesServiceAPI()
         self.networkObj = NetworkingObject.sharedManager()
+        self.count = 0
     }
     
     public func loadDataDeliveryItems(onCompleted: @escaping (String)-> Void){
         self.deliveryServices.getDeliveryItems(using: self.networkObj) { (serviceResult) in
             if (serviceResult.responseCode == "OK"){
-                self.deliveryItemModels = serviceResult.JSONObject
+                self.deliveryItemModels = serviceResult.getResultObject().listOfDelivery
+                self.count = self.deliveryItemModels?.count ?? 0
                 onCompleted(serviceResult.responseCode!)
             }else{
                 onCompleted(serviceResult.responseMessage!)

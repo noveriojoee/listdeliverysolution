@@ -11,7 +11,7 @@ import ObjectMapper
 
 class DeliveryItemModel: Mappable {
     
-    var id : String?
+    var deliveryItemId : Int?
     var descriptionStr : String?
     var imageUrl : String?
     var location : LocationModel?
@@ -19,8 +19,9 @@ class DeliveryItemModel: Mappable {
     required init?(map: Map) {
         
     }
+    
     func mapping(map: Map) {
-        id <- map["id"]
+        deliveryItemId <- map["id"]
         descriptionStr <- map["description"]
         imageUrl <- map["imageUrl"]
         location <- map["location"]

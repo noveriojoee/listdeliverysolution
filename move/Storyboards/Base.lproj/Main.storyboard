@@ -33,10 +33,29 @@
                     <view key="view" contentMode="scaleToFill" id="bRi-de-SHZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IfV-eP-Ghc">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Hoy-by-jKe" id="YBx-B5-ayf"/>
+                                    <outlet property="delegate" destination="Hoy-by-jKe" id="D0j-U2-UTA"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AMy-ZY-8gx" firstAttribute="bottom" secondItem="IfV-eP-Ghc" secondAttribute="bottom" id="Ctu-ow-KpX"/>
+                            <constraint firstItem="IfV-eP-Ghc" firstAttribute="leading" secondItem="AMy-ZY-8gx" secondAttribute="leading" id="ESd-Kx-zbS"/>
+                            <constraint firstItem="AMy-ZY-8gx" firstAttribute="trailing" secondItem="IfV-eP-Ghc" secondAttribute="trailing" id="TIb-yj-o6l"/>
+                            <constraint firstItem="IfV-eP-Ghc" firstAttribute="top" secondItem="AMy-ZY-8gx" secondAttribute="top" id="xB2-Xl-6ph"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="AMy-ZY-8gx"/>
                     </view>
                     <navigationItem key="navigationItem" id="qUm-wQ-gLE"/>
+                    <connections>
+                        <outlet property="tblView" destination="IfV-eP-Ghc" id="28F-xn-1wP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ka0-Gv-pc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
