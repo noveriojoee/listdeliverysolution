@@ -18,6 +18,8 @@
 		DE6888D123262E9700D1B973 /* BaseAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6888D023262E9700D1B973 /* BaseAPIRequest.swift */; };
 		DE6888DA23263B0A00D1B973 /* NetworkingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6888D923263B0A00D1B973 /* NetworkingObject.m */; };
 		DE6888DC23263F9100D1B973 /* DeliveriesServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6888DB23263F9100D1B973 /* DeliveriesServiceAPI.swift */; };
+		DE6888E32326705100D1B973 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6888E22326705100D1B973 /* APIResult.swift */; };
+		DE6888E5232671B300D1B973 /* DeliveryItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6888E4232671B300D1B973 /* DeliveryItemsModel.swift */; };
 		DEC912562323F97F00F24D6B /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC912552323F97F00F24D6B /* LocationModel.swift */; };
 		DEC912582323F99000F24D6B /* DeliveryItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC912572323F99000F24D6B /* DeliveryItemModel.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +42,8 @@
 		DE6888D823263B0A00D1B973 /* NetworkingObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkingObject.h; sourceTree = "<group>"; };
 		DE6888D923263B0A00D1B973 /* NetworkingObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkingObject.m; sourceTree = "<group>"; };
 		DE6888DB23263F9100D1B973 /* DeliveriesServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesServiceAPI.swift; sourceTree = "<group>"; };
+		DE6888E22326705100D1B973 /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
+		DE6888E4232671B300D1B973 /* DeliveryItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryItemsModel.swift; sourceTree = "<group>"; };
 		DEC912552323F97F00F24D6B /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		DEC912572323F99000F24D6B /* DeliveryItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryItemModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +118,7 @@
 			children = (
 				DEC912552323F97F00F24D6B /* LocationModel.swift */,
 				DEC912572323F99000F24D6B /* DeliveryItemModel.swift */,
+				DE6888E4232671B300D1B973 /* DeliveryItemsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -155,8 +160,8 @@
 		DE6888CD23262E4D00D1B973 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				DE6888E62326730E00D1B973 /* Base */,
 				DE6888D22326393600D1B973 /* RequestAPI */,
-				DE6888D023262E9700D1B973 /* BaseAPIRequest.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -167,6 +172,15 @@
 				DE6888DB23263F9100D1B973 /* DeliveriesServiceAPI.swift */,
 			);
 			path = RequestAPI;
+			sourceTree = "<group>";
+		};
+		DE6888E62326730E00D1B973 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				DE6888D023262E9700D1B973 /* BaseAPIRequest.swift */,
+				DE6888E22326705100D1B973 /* APIResult.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE6888CC23262B5F00D1B973 /* DeliveriesInquiryViewModel.swift in Sources */,
+				DE6888E32326705100D1B973 /* APIResult.swift in Sources */,
 				DE5FB7A9232391B900D84817 /* DeliveriesInquiryViewController.swift in Sources */,
 				DE5FB7A7232391B900D84817 /* AppDelegate.swift in Sources */,
 				DE5FB7AF232391B900D84817 /* move.xcdatamodeld in Sources */,
@@ -303,6 +318,7 @@
 				DEC912562323F97F00F24D6B /* LocationModel.swift in Sources */,
 				DE6888D123262E9700D1B973 /* BaseAPIRequest.swift in Sources */,
 				DE6888DC23263F9100D1B973 /* DeliveriesServiceAPI.swift in Sources */,
+				DE6888E5232671B300D1B973 /* DeliveryItemsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

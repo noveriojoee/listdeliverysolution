@@ -9,17 +9,17 @@
 import UIKit
 import ObjectMapper
 
-public class DeliveryItemModel: Mappable {
+class DeliveryItemModel: Mappable {
     
-    public var id : String?
-    public var descriptionStr : String?
-    public var imageUrl : String?
-    public var location : LocationModel?
+    var id : String?
+    var descriptionStr : String?
+    var imageUrl : String?
+    var location : LocationModel?
     
-    public required init?(map: Map) {
+    required init?(map: Map) {
         
     }
-    public func mapping(map: Map) {
+    func mapping(map: Map) {
         id <- map["id"]
         descriptionStr <- map["description"]
         imageUrl <- map["imageUrl"]

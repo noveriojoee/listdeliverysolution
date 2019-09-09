@@ -7,33 +7,32 @@
 //
 
 import UIKit
+import IJProgressView
 
-class DeliveriesInquiryViewController: UIViewController, UITableViewDelegate {
+class DeliveriesInquiryViewController: UIViewController {
 
     @IBOutlet weak var tblView: UITableView!
     private var viewModel : DeliveriesInquiryViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tblView.delegate = self;
-        
-        if (self.viewModel != nil){
+        if (self.viewModel == nil){
             self.viewModel = DeliveriesInquiryViewModel()
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        IJProgressView.shared.showProgressView()
+        self.viewModel.loadDataDeliveryItems { (responseString) in
+            IJProgressView.shared.hideProgressView()
+            if (responseString.elementsEqual("OK")){
+                print("load sukses")
+            }else{
+                print("load error")
+            }
+        }
     }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell : UITableViewCell = UITableViewCell()
-        
-        return cell
-    }
+   
 }
 
