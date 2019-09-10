@@ -25,7 +25,7 @@ class CustomTableViewCell: UITableViewCell {
     
     func renderTableViewCell(with data : DeliveryItemModel!){
         self.model = data
-//        self.imgView.downloaded(from: data.imageUrl!)
-        self.lblDescription.text = data.descriptionStr!
+        self.imgView.downloaded(from: data.imageUrl!)
+        self.lblDescription.text = data.descriptionStr! + " at " + data.location!.address!
     }
 }

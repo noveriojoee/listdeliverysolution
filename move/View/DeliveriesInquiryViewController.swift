@@ -19,7 +19,7 @@ class DeliveriesInquiryViewController: UIViewController, UITableViewDelegate, UI
         super.viewDidLoad()
         self.tblView.delegate = self
         self.tblView.dataSource = self
-        self.tblView.register(UINib(nibName: "CustomTableViewCell", bundle: Bundle(identifier: "com.lala.move")), forCellReuseIdentifier: "lalamove_custom_cell")
+        self.tblView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
         if (self.viewModel == nil){
             self.viewModel = DeliveriesInquiryViewModel()
         }
@@ -51,16 +51,16 @@ class DeliveriesInquiryViewController: UIViewController, UITableViewDelegate, UI
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell : UITableViewCell?
         if (self.viewModel != nil){
-            cell = CustomTableViewCell()
+            let lalamoveCell : CustomTableViewCell = (self.tblView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell)
             let data = self.viewModel.deliveryItemModels![indexPath.row]
-            (cell as! CustomTableViewCell).renderTableViewCell(with:data)
+            lalamoveCell.renderTableViewCell(with:data)
+            return lalamoveCell
         }else{
-            cell = UITableViewCell()
+            let cell = UITableViewCell()
+            return cell
         }
         
-        return cell!
     }
    
 }
