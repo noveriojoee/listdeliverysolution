@@ -25,6 +25,7 @@
 		DE6888EF23267BF700D1B973 /* UIImageView+downloaded.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6888EE23267BF700D1B973 /* UIImageView+downloaded.swift */; };
 		DE7DBD9023276D0D0035EA0A /* DetailDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7DBD8F23276D0D0035EA0A /* DetailDeliveryViewController.swift */; };
 		DE7DBD9223276D820035EA0A /* DetailDeliveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7DBD9123276D820035EA0A /* DetailDeliveryViewModel.swift */; };
+		DE7DBD952327C7220035EA0A /* LocationMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7DBD942327C7220035EA0A /* LocationMarker.swift */; };
 		DEC912562323F97F00F24D6B /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC912552323F97F00F24D6B /* LocationModel.swift */; };
 		DEC912582323F99000F24D6B /* DeliveryItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC912572323F99000F24D6B /* DeliveryItemModel.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		DE6888EE23267BF700D1B973 /* UIImageView+downloaded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+downloaded.swift"; sourceTree = "<group>"; };
 		DE7DBD8F23276D0D0035EA0A /* DetailDeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDeliveryViewController.swift; sourceTree = "<group>"; };
 		DE7DBD9123276D820035EA0A /* DetailDeliveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDeliveryViewModel.swift; sourceTree = "<group>"; };
+		DE7DBD942327C7220035EA0A /* LocationMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMarker.swift; sourceTree = "<group>"; };
 		DEC912552323F97F00F24D6B /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		DEC912572323F99000F24D6B /* DeliveryItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryItemModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +129,7 @@
 		DE5FB7BB2323931900D84817 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DE7DBD932327C7040035EA0A /* LocationMarker */,
 				DEC912552323F97F00F24D6B /* LocationModel.swift */,
 				DEC912572323F99000F24D6B /* DeliveryItemModel.swift */,
 				DE6888E4232671B300D1B973 /* DeliveryItemsModel.swift */,
@@ -220,6 +223,14 @@
 				DE6888EE23267BF700D1B973 /* UIImageView+downloaded.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DE7DBD932327C7040035EA0A /* LocationMarker */ = {
+			isa = PBXGroup;
+			children = (
+				DE7DBD942327C7220035EA0A /* LocationMarker.swift */,
+			);
+			path = LocationMarker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +369,7 @@
 				DE6888DA23263B0A00D1B973 /* NetworkingObject.m in Sources */,
 				DE7DBD9023276D0D0035EA0A /* DetailDeliveryViewController.swift in Sources */,
 				DE6888EA2326772600D1B973 /* CustomTableViewCell.swift in Sources */,
+				DE7DBD952327C7220035EA0A /* LocationMarker.swift in Sources */,
 				DEC912582323F99000F24D6B /* DeliveryItemModel.swift in Sources */,
 				DEC912562323F97F00F24D6B /* LocationModel.swift in Sources */,
 				DE6888D123262E9700D1B973 /* BaseAPIRequest.swift in Sources */,
