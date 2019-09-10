@@ -13,6 +13,9 @@ class DetailDeliveryViewController: UIViewController {
 
     var viewModel : DetailDeliveryViewModel?
     @IBOutlet weak var detailMap: MKMapView!
+    @IBOutlet weak var deliveryImage: UIImageView!
+    @IBOutlet weak var lblDescription: UILabel!
+    
     var location : CLLocation?
     var regionRadius: CLLocationDistance = 1000
     
@@ -30,6 +33,9 @@ class DetailDeliveryViewController: UIViewController {
             self.location = CLLocation(latitude: self.viewModel?.model?.location?.lat ?? 0, longitude: self.viewModel?.model?.location?.lng ?? 0)
             
             self.centerMapOnLocation(data: self.viewModel!.model!, location: self.location!)
+            self.lblDescription.text = self.viewModel!.model!.descriptionStr! + " at " + self.viewModel!.model!.location!.address!
+            self.deliveryImage.downloaded(from: self.viewModel!.model!.imageUrl!)
+            
         }
     }
     
