@@ -13,7 +13,7 @@ class DeliveriesInquiryViewController: UIViewController, UITableViewDelegate, UI
     
 
     @IBOutlet weak var tblView: UITableView!
-    private var viewModel : DeliveriesInquiryViewModel!
+    var viewModel : DeliveriesInquiryViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,8 +60,21 @@ class DeliveriesInquiryViewController: UIViewController, UITableViewDelegate, UI
             let cell = UITableViewCell()
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedData = self.viewModel.deliveryItemModels![indexPath.row]
+        self.performSegue(withIdentifier: "segue_to_detail", sender: selectedData)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "segue_to_detail"){
+            let nextVc = segue.destination as! DetailDeliveryViewController
+            nextVc.viewModel = DetailDeliveryViewModel()
+            nextVc.viewModel?.model = (sender as! DeliveryItemModel)
+        }
         
     }
-   
 }
 

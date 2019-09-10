@@ -10,8 +10,8 @@ import UIKit
 import ObjectMapper
 
 class LocationModel: Mappable {
-    var lat : String?
-    var lng : String?
+    var lat : Double?
+    var lng : Double?
     var address : String?
     
     required init?(map: Map) {
