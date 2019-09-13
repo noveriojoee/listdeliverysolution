@@ -14,14 +14,13 @@
 		DE5FB7AF232391B900D84817 /* move.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE5FB7AD232391B900D84817 /* move.xcdatamodeld */; };
 		DE5FB7B1232391BA00D84817 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE5FB7B0232391BA00D84817 /* Assets.xcassets */; };
 		DE5FB7B4232391BA00D84817 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5FB7B2232391BA00D84817 /* LaunchScreen.storyboard */; };
+		DE65E70E232B86DF00C1F488 /* DeliveryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65E70D232B86DF00C1F488 /* DeliveryItemTableViewCell.swift */; };
 		DE6888CC23262B5F00D1B973 /* DeliveriesInquiryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6888CB23262B5F00D1B973 /* DeliveriesInquiryViewModel.swift */; };
 		DE6888D123262E9700D1B973 /* BaseAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6888D023262E9700D1B973 /* BaseAPIRequest.swift */; };
 		DE6888DA23263B0A00D1B973 /* NetworkingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6888D923263B0A00D1B973 /* NetworkingObject.m */; };
 		DE6888DC23263F9100D1B973 /* DeliveriesServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6888DB23263F9100D1B973 /* DeliveriesServiceAPI.swift */; };
 		DE6888E32326705100D1B973 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6888E22326705100D1B973 /* APIResult.swift */; };
 		DE6888E5232671B300D1B973 /* DeliveryItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6888E4232671B300D1B973 /* DeliveryItemsModel.swift */; };
-		DE6888EA2326772600D1B973 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6888E82326772600D1B973 /* CustomTableViewCell.swift */; };
-		DE6888EB2326772600D1B973 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE6888E92326772600D1B973 /* CustomTableViewCell.xib */; };
 		DE6888EF23267BF700D1B973 /* UIImageView+downloaded.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6888EE23267BF700D1B973 /* UIImageView+downloaded.swift */; };
 		DE7DBD9023276D0D0035EA0A /* DetailDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7DBD8F23276D0D0035EA0A /* DetailDeliveryViewController.swift */; };
 		DE7DBD9223276D820035EA0A /* DetailDeliveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7DBD9123276D820035EA0A /* DetailDeliveryViewModel.swift */; };
@@ -42,6 +41,7 @@
 		DE5FB7B0232391BA00D84817 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE5FB7B3232391BA00D84817 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE5FB7B5232391BA00D84817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE65E70D232B86DF00C1F488 /* DeliveryItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryItemTableViewCell.swift; sourceTree = "<group>"; };
 		DE6888CB23262B5F00D1B973 /* DeliveriesInquiryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesInquiryViewModel.swift; sourceTree = "<group>"; };
 		DE6888D023262E9700D1B973 /* BaseAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIRequest.swift; sourceTree = "<group>"; };
 		DE6888D723263B0A00D1B973 /* move-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "move-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -50,8 +50,6 @@
 		DE6888DB23263F9100D1B973 /* DeliveriesServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesServiceAPI.swift; sourceTree = "<group>"; };
 		DE6888E22326705100D1B973 /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
 		DE6888E4232671B300D1B973 /* DeliveryItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryItemsModel.swift; sourceTree = "<group>"; };
-		DE6888E82326772600D1B973 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		DE6888E92326772600D1B973 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		DE6888EE23267BF700D1B973 /* UIImageView+downloaded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+downloaded.swift"; sourceTree = "<group>"; };
 		DE7DBD8F23276D0D0035EA0A /* DetailDeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDeliveryViewController.swift; sourceTree = "<group>"; };
 		DE7DBD9123276D820035EA0A /* DetailDeliveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDeliveryViewModel.swift; sourceTree = "<group>"; };
@@ -202,8 +200,7 @@
 		DE6888E72326770100D1B973 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				DE6888E82326772600D1B973 /* CustomTableViewCell.swift */,
-				DE6888E92326772600D1B973 /* CustomTableViewCell.xib */,
+				DE65E70D232B86DF00C1F488 /* DeliveryItemTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -296,7 +293,6 @@
 			files = (
 				DE5FB7B4232391BA00D84817 /* LaunchScreen.storyboard in Resources */,
 				DE5FB7B1232391BA00D84817 /* Assets.xcassets in Resources */,
-				DE6888EB2326772600D1B973 /* CustomTableViewCell.xib in Resources */,
 				DE5FB7AC232391B900D84817 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,12 +364,12 @@
 				DE6888EF23267BF700D1B973 /* UIImageView+downloaded.swift in Sources */,
 				DE6888DA23263B0A00D1B973 /* NetworkingObject.m in Sources */,
 				DE7DBD9023276D0D0035EA0A /* DetailDeliveryViewController.swift in Sources */,
-				DE6888EA2326772600D1B973 /* CustomTableViewCell.swift in Sources */,
 				DE7DBD952327C7220035EA0A /* LocationMarker.swift in Sources */,
 				DEC912582323F99000F24D6B /* DeliveryItemModel.swift in Sources */,
 				DEC912562323F97F00F24D6B /* LocationModel.swift in Sources */,
 				DE6888D123262E9700D1B973 /* BaseAPIRequest.swift in Sources */,
 				DE6888DC23263F9100D1B973 /* DeliveriesServiceAPI.swift in Sources */,
+				DE65E70E232B86DF00C1F488 /* DeliveryItemTableViewCell.swift in Sources */,
 				DE6888E5232671B300D1B973 /* DeliveryItemsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

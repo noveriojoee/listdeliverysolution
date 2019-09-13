@@ -11,15 +11,13 @@ import IJProgressView
 
 class DeliveriesInquiryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var tblView: UITableView!
+    var tblView: UITableView!
     var viewModel : DeliveriesInquiryViewModel!
     var spinner : UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tblView.delegate = self
-        self.tblView.dataSource = self
-        self.tblView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
+        self.drawUI()
         self.spinner = UIActivityIndicatorView(style: .gray)
         if (self.viewModel == nil){
             self.viewModel = DeliveriesInquiryViewModel()
@@ -40,6 +38,15 @@ class DeliveriesInquiryViewController: UIViewController, UITableViewDelegate, UI
         }
     }
     
+    func drawUI(){
+        self.tblView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        self.view.addSubview(self.tblView)
+        self.tblView.delegate = self
+        self.tblView.dataSource = self
+//        self.tblView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
+        self.tblView.register(DeliveryItemTableViewCell.self, forCellReuseIdentifier: "cell")
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -54,7 +61,7 @@ class DeliveriesInquiryViewController: UIViewController, UITableViewDelegate, UI
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (self.viewModel != nil){
-            let lalamoveCell : CustomTableViewCell = (self.tblView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell)
+            let lalamoveCell : DeliveryItemTableViewCell = (self.tblView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DeliveryItemTableViewCell)
             let data = self.viewModel.deliveryItemModels![indexPath.row]
             lalamoveCell.renderTableViewCell(with:data)
             return lalamoveCell
@@ -83,9 +90,12 @@ class DeliveriesInquiryViewController: UIViewController, UITableViewDelegate, UI
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedData = self.viewModel.deliveryItemModels![indexPath.row]
-        self.performSegue(withIdentifier: "segue_to_detail", sender: selectedData)
+        self.goToDetailPage(model: selectedData)
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
     
     func showSpinnerLoadMore(){
         self.spinner.startAnimating()
@@ -100,13 +110,12 @@ class DeliveriesInquiryViewController: UIViewController, UITableViewDelegate, UI
         self.tblView.tableFooterView?.isHidden = true
     }
     
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "segue_to_detail"){
-            let nextVc = segue.destination as! DetailDeliveryViewController
-            nextVc.viewModel = DetailDeliveryViewModel()
-            nextVc.viewModel?.model = (sender as! DeliveryItemModel)
-        }
+    func goToDetailPage(model object : DeliveryItemModel){
+        let nextVc = DetailDeliveryViewController()
+        nextVc.viewModel = DetailDeliveryViewModel()
+        nextVc.viewModel?.model = object
+        self.navigationController?.pushViewController(nextVc, animated: true)
     }
+    
 }
 

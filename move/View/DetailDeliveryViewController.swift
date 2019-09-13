@@ -12,16 +12,17 @@ import MapKit
 class DetailDeliveryViewController: UIViewController {
 
     var viewModel : DetailDeliveryViewModel?
-    @IBOutlet weak var detailMap: MKMapView!
-    @IBOutlet weak var deliveryImage: UIImageView!
-    @IBOutlet weak var lblDescription: UILabel!
+    var detailMap: MKMapView!
+    var detailView : UIView!
+    var deliveryImage: UIImageView!
+    var lblDescription: UILabel!
     
     var location : CLLocation?
     var regionRadius: CLLocationDistance = 1000
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.drawUI()
         if (self.viewModel == nil){
             self.viewModel = DetailDeliveryViewModel()
         }
@@ -35,8 +36,22 @@ class DetailDeliveryViewController: UIViewController {
             self.centerMapOnLocation(data: self.viewModel!.model!, location: self.location!)
             self.lblDescription.text = self.viewModel!.model!.descriptionStr! + " at " + self.viewModel!.model!.location!.address!
             self.deliveryImage.downloaded(from: self.viewModel!.model!.imageUrl!)
-            
         }
+    }
+    
+    func drawUI(){
+        self.view.backgroundColor = UIColor.white
+        self.detailMap = MKMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - 250))
+        self.detailView = UIView(frame: CGRect(x: 0, y: self.detailMap.frame.height + 5, width: self.view.frame.width, height: 60))
+        self.deliveryImage = UIImageView(frame: CGRect(x: 5, y: self.detailView.frame.height / 2, width: 60, height: 60))
+        self.lblDescription = UILabel(frame: CGRect(x: self.deliveryImage.frame.width + 5, y: self.detailView.frame.height / 2, width: self.detailView.frame.width - self.deliveryImage.frame.width - 20, height: self.detailView.frame.height - 5))
+        self.lblDescription.numberOfLines = 0
+        
+        
+        self.detailView.addSubview(self.deliveryImage)
+        self.detailView.addSubview(self.lblDescription)
+        self.view.addSubview(self.detailMap)
+        self.view.addSubview(self.detailView)
     }
     
     func centerMapOnLocation(data : DeliveryItemModel,location: CLLocation) {
