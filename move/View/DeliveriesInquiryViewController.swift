@@ -11,15 +11,16 @@ import IJProgressView
 
 class DeliveriesInquiryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-
     @IBOutlet weak var tblView: UITableView!
     var viewModel : DeliveriesInquiryViewModel!
+    var spinner : UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tblView.delegate = self
         self.tblView.dataSource = self
         self.tblView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
+        self.spinner = UIActivityIndicatorView(style: .gray)
         if (self.viewModel == nil){
             self.viewModel = DeliveriesInquiryViewModel()
         }
@@ -27,6 +28,7 @@ class DeliveriesInquiryViewController: UIViewController, UITableViewDelegate, UI
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.viewModel.setTblViewPage(pageNumber: 0)
         IJProgressView.shared.showProgressView()
         self.viewModel.loadDataDeliveryItems { (responseString) in
             IJProgressView.shared.hideProgressView()
@@ -62,9 +64,40 @@ class DeliveriesInquiryViewController: UIViewController, UITableViewDelegate, UI
         }
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if (self.viewModel != nil){
+            if (indexPath.row + 1  == self.viewModel.deliveryItemModels!.count){
+                self.showSpinnerLoadMore()
+                self.viewModel.setTblViewPage(pageNumber: self.viewModel.dataPage + 1)
+                self.viewModel.loadDataDeliveryItems { (responseString) in
+                    self.stopSpinnerLoadMore()
+                    if (responseString.elementsEqual("OK")){
+                        self.tblView.reloadData()
+                    }else{
+                        print("load error")
+                    }
+                }
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedData = self.viewModel.deliveryItemModels![indexPath.row]
         self.performSegue(withIdentifier: "segue_to_detail", sender: selectedData)
+    }
+    
+    
+    func showSpinnerLoadMore(){
+        self.spinner.startAnimating()
+        self.spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(self.tblView.bounds.width), height: CGFloat(44))
+        self.tblView.tableFooterView = self.spinner
+        self.tblView.tableFooterView?.isHidden = false
+    }
+    
+    func stopSpinnerLoadMore(){
+        self.spinner.stopAnimating()
+        self.tblView.tableFooterView = nil
+        self.tblView.tableFooterView?.isHidden = true
     }
     
     
@@ -74,7 +107,6 @@ class DeliveriesInquiryViewController: UIViewController, UITableViewDelegate, UI
             nextVc.viewModel = DetailDeliveryViewModel()
             nextVc.viewModel?.model = (sender as! DeliveryItemModel)
         }
-        
     }
 }
 

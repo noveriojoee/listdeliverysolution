@@ -13,9 +13,9 @@
         <!--Navigation Controller-->
         <scene sceneID="gXj-7V-FqD">
             <objects>
-                <navigationController navigationBarHidden="YES" id="Jg9-OO-Sx5" sceneMemberID="viewController">
-                    <nil key="simulatedTopBarMetrics"/>
+                <navigationController id="Jg9-OO-Sx5" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="l5k-Iw-cK2">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -26,16 +26,16 @@
             </objects>
             <point key="canvasLocation" x="-211" y="575"/>
         </scene>
-        <!--Deliveries Inquiry View Controller-->
+        <!--Deliveries-->
         <scene sceneID="G8w-ZQ-TzU">
             <objects>
-                <viewController id="Hoy-by-jKe" customClass="DeliveriesInquiryViewController" customModule="move" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Deliveries" id="Hoy-by-jKe" customClass="DeliveriesInquiryViewController" customModule="move" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bRi-de-SHZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IfV-eP-Ghc">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <sections/>
                                 <connections>
@@ -53,7 +53,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AMy-ZY-8gx"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qUm-wQ-gLE"/>
+                    <navigationItem key="navigationItem" title="Deliveries" id="qUm-wQ-gLE"/>
                     <connections>
                         <outlet property="tblView" destination="IfV-eP-Ghc" id="28F-xn-1wP"/>
                         <segue destination="viR-ak-pES" kind="show" identifier="segue_to_detail" id="4vf-Yr-Eyt"/>
@@ -63,16 +63,16 @@
             </objects>
             <point key="canvasLocation" x="652" y="574"/>
         </scene>
-        <!--Detail Delivery View Controller-->
+        <!--Detail-->
         <scene sceneID="fm1-Bs-6nV">
             <objects>
-                <viewController id="viR-ak-pES" customClass="DetailDeliveryViewController" customModule="move" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Detail" id="viR-ak-pES" customClass="DetailDeliveryViewController" customModule="move" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f9b-9u-aTw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qYu-x1-ybj">
-                                <rect key="frame" x="0.0" y="20" width="375" height="456"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="412"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tX8-9l-LBd">
                                 <rect key="frame" x="5" y="481" width="365" height="80"/>

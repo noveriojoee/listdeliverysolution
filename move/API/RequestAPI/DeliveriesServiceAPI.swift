@@ -10,8 +10,8 @@ import UIKit
 import ObjectMapper
 
 public class DeliveriesServiceAPI: BaseAPIRequest {
-    func getDeliveryItems(using networkObject: NetworkingObject!, getDeliveryCompleted: @escaping (APIResult<DeliveryItemsModel>)-> Void){
-        let actionMethod = self.endpointUrl + "/deliveries"
+    func getDeliveryItems(objectIndex index : Int, limit limitValue : Int,using networkObject: NetworkingObject!, getDeliveryCompleted: @escaping (APIResult<DeliveryItemsModel>)-> Void){
+        let actionMethod = self.endpointUrl + "/deliveries?offset=" + String(index) + "&limit=" + String(limitValue) + ""
         let responseObject : APIResult<DeliveryItemsModel> = APIResult<DeliveryItemsModel>()
         let deliveryItems = DeliveryItemsModel()
         
