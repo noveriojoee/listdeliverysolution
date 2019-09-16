@@ -33,9 +33,30 @@ class DeliveriesInquiryViewController: UIViewController, UITableViewDelegate, UI
             if (responseString.elementsEqual("OK")){
                 self.tblView.reloadData()
             }else{
-                print("load error")
+               self.alertReload(message: responseString)
             }
         }
+    }
+    
+    func alertReload(message responseString : String){
+        let alert = UIAlertController(title: "Sorry, We have trouble to retrieve your data", message: responseString, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "RELOAD", style: .default, handler:{ action in
+            IJProgressView.shared.showProgressView()
+            self.viewModel.loadDataDeliveryItems { (responseStr) in
+                IJProgressView.shared.hideProgressView()
+                if (responseStr.elementsEqual("OK")){
+                    self.tblView.reloadData()
+                }else{
+                    self.alertReload(message: responseStr)
+                }
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "EXIT", style: .cancel, handler: {action in
+            exit(0)
+        }))
+        
+        self.present(alert, animated: true)
     }
     
     func drawUI(){

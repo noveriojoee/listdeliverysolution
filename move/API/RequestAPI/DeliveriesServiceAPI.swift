@@ -20,7 +20,7 @@ public class DeliveriesServiceAPI: BaseAPIRequest {
                 deliveryItems.setListOfDelivery(arrayJson: result as! [Any])
                 responseObject.setResultObject(responseCode: "OK", responseMessage: "OK", data: deliveryItems)
             }else{
-                responseObject.setResultObject(responseCode: "ERROR", responseMessage: "UNKNOWN ERROR", data: deliveryItems)
+                responseObject.setResultObject(responseCode: "ERROR", responseMessage: "Failed To Get Data", data: deliveryItems)
             }
             
             getDeliveryCompleted(responseObject)
